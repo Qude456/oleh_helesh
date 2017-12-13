@@ -5,4 +5,14 @@
 input[type="button"] {
   height: 75px;
   width: 75px;
+  font-size: 28px;
+  border: solid 2px gray;
+  margin: -4px;
+}
+
+button {
+  width: 75px;
+  height: 25px;
+  border: solid 2px gray;
+  margin: -4px;
 }
