@@ -1,3 +1,8 @@
+(function (){
+
+document.body.addEventListener('click', setBtnText);
+restart.addEventListener('click', restartGame);
+
 var playerStatusElement = document.getElementById('currentPlayerStatus');
 var resetGameButton = document.getElementById('restart');
 var game, currentPlayer, gameStatus;
@@ -9,9 +14,18 @@ var playerO = 'o';
 
 restartGame();
 
-function setBtnText(event, arrId) {
+// var centralBtnTextChanged = new CustomEvent("btnTextChanged");
+// centralBtn.addEventListener("btnTextChanged", function(){
+//   console.log("Hi");
+// })
+
+function setBtnText(event) {
+  var arrId = event.target.dataset.arrSyncId;
     if(game[arrId] === '-' && gameStatus === 1){
     event.target.value = currentPlayer;
+
+    // event.target.dispatchEvent(centralBtnTextChanged);
+
     game[arrId] = currentPlayer;
 
     var win = checkWin();
@@ -78,3 +92,5 @@ function restartGame(){
   }
   resetGameButton.hidden = true;
 }
+
+}());
